@@ -22,3 +22,23 @@ export const useAnimatedScale = (scGap, delay) => {
         scale
     }
 }
+
+export const useDimension = () => {
+    const [w, setW] = useDimension(window.innerWidth)
+    const [h, setH] = useDimension(window.innerHeight)
+    return {
+        resize() {
+            window.onresize = () => {
+                setW(window.innerWidth)
+                setH(window.innerHeight)
+            }
+        },
+        disableResizing() {
+            window.onresize = () => {
+
+            }
+        },
+        w,
+        h
+    }
+}
