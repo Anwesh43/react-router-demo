@@ -9,7 +9,7 @@ const rotatingStyle = (scale, w, h) => {
     const width = `${size}px`
     const height = `${size}px`
     const background = '#4CAF50'
-    const WebkitTransform = `rotate(${90 * Math.sin(scale * Math.PI / 180)}deg)`
+    const WebkitTransform = `rotate(${90 * Math.sin(scale * Math.PI)}deg)`
     return {
         position,
         top,

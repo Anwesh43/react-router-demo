@@ -16,7 +16,7 @@ export const useAnimatedScale = (scGap, delay) => {
                         setAnimated(false)
                         clearInterval(interval)
                     }
-                })
+                }, delay)
             }
         },
         scale
@@ -24,8 +24,8 @@ export const useAnimatedScale = (scGap, delay) => {
 }
 
 export const useDimension = () => {
-    const [w, setW] = useDimension(window.innerWidth)
-    const [h, setH] = useDimension(window.innerHeight)
+    const [w, setW] = useState(window.innerWidth)
+    const [h, setH] = useState(window.innerHeight)
     return {
         resize() {
             window.onresize = () => {
