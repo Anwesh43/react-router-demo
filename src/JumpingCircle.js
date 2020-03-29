@@ -1,4 +1,5 @@
 import {useAnimatedScale, useDimension} from './hooks'
+import {useParams} from 'react-router-dom'
 import React from 'react'
 
 const circleStyle = (scale, w, h) => {
@@ -11,13 +12,17 @@ const circleStyle = (scale, w, h) => {
     const height = `${2 * r}px`
     const background = '#3F51B5'
     const borderRadius = '50%'
-    return {position, top, left, width, height, background, borderRadius}
+    const color = "white"
+    const fontSize = `${Math.min(w, h) / 35}px`
+    const textAlign = 'center'
+    return {position, top, left, width, height, background, borderRadius, color, textAlign, fontSize}
 }
 
 
 const JumpingCircle = ({w, h}) => {
     const {scale, start} = useAnimatedScale(0.02, 30)
-    return (<div onClick = {start} style = {circleStyle(scale,w, h)}></div>)
+    const {text} = useParams()
+    return (<div onClick = {start} style = {circleStyle(scale,w, h)}>{text}</div>)
 }
 
 export default JumpingCircle

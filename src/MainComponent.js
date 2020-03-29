@@ -22,17 +22,17 @@ const MainComponent = () => {
                   <Link to = "/">Home</Link>
                 </li>
                 <li>
-                  <Link to = "/rect">RotatingRect</Link>
+                  <Link to = "/rect/toprect">RotatingRect</Link>
                 </li>
                 <li>
-                  <Link to = "/circle">Circle</Link>
+                  <Link to = "/circle/topcircle">Circle</Link>
                 </li>
               </ul>
               <Switch>
-                <Route path = "/rect">
+                <Route path = "/rect/:text">
                   <RotatingRect w = {w} h = {h}/>
                 </Route>
-                <Route path = "/circle">
+                <Route path = "/circle/:text">
                   <JumpingCircle w = {w} h = {h}/>
                 </Route>
                 <Route path = "/">
